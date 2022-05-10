@@ -22,5 +22,5 @@
 
   - name: i want to start webserver
     service:
-        name: httpd
-        state: started
+       name: httpd
+       state: started

@@ -5,8 +5,10 @@
     apt: 
       name: git
       status: present
+    when: ansible_os_family =="Debian"
 
   - name: i want to install tree
     apt: 
       name: tree
       status: present
+    when: ansible_os_family =="Debian"

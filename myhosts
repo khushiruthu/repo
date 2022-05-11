@@ -5,7 +5,3 @@
 
 
 
-[mywebserver:vars]
-myvar= value
-mywebpackonubuntu= nginex22222
-mywebpackinredhat= httpd

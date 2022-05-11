@@ -2,3 +2,10 @@
 172.31.26.71
 [MYRedHatserver]
 172.31.22.127
+
+
+
+[mywebserver:vars]
+myvar= value
+mywebpackonubuntu= nginex22222
+mywebpackinredhat= httpd

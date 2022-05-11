@@ -1,26 +1,27 @@
 ---
 - hosts: all
   become: yes
+  gather_fack: yes
   tasks:
   - name: i want to install webserver
     apt:
-      name: apache2
+      name: "{{mywebpackonubuntu}}"
       state: present
     when: ansible_os_family =="Debian"
 
   - name: i want to start apache2
     service:
-      name: apache2
+      name: "{{mywebpackonubuntu}}"
       state: restarted
     when: ansible_os_family =="Debian"
 
   - name: i want to install webserver in RedHat nodes
     yum: 
-      name: httpd
+      name: "{{mywebpackinredhat}}"
       state: present
     when: ansible_os_family =="RedHat"
 
   - name: i want to start webserver
     service:
-       name: httpd
+       name: "{{mywebpackinredhat}}"
        state: started

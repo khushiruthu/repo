@@ -1,27 +1,27 @@
 ---
 - hosts: mywebservers
   become: yes
-  gather_fack: yes
+  gather_fact: yes
   tasks:
   - name: i want to install webserver
     apt:
-      name: "{{mywebpackonubuntu}}"
+      name: "{{ mywebpackonubuntu }}"
       state: present
     when: ansible_os_family =="Debian"
 
   - name: i want to start apache2
     service:
-      name: "{{mywebpackonubuntu}}"
+      name: "{{ mywebpackonubuntu }}"
       state: restarted
     when: ansible_os_family =="Debian"
 
   - name: i want to install webserver in RedHat nodes
     yum: 
-      name: "{{mywebpackinredhat}}"
+      name: "{{ mywebpackinredhat }}"
       state: present
     when: ansible_os_family =="RedHat"
 
   - name: i want to start webserver
     service:
-       name: "{{mywebpackinredhat}}"
+       name: "{{ mywebpackinredhat }}"
        state: started
